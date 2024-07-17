@@ -5,7 +5,79 @@ import Card from '../components/Card.astro';
 
 <Layout title="Portafolio Personal">
 	<main>
-		<h1>Portafolio</h1>
+		<section class="flex justify-between w-full items-center px-10 py-12">
+			<div class="pl-8">
+				<h1 class="text-6xl font-extrabold py-3 animate-fade-in-down">Hola, soy Ismael Sailema </h1>
+				<h2 class="text-3xl font-light py-3 animate-fade-in-up">Estudiante en la carrera de Ingeniería De Software. Me gusta trabajar en proyectos fullstack para distintos dispositivos.</h2>
+				<div class="flex w-full justify-center py-5 gap-11">
+					<a
+					class="hover:scale-110 transition duration-300"
+					  href="https://www.linkedin.com/in/ismael-sailema-a04089287"
+					  target="_blank"
+					>
+					  <img
+						class="rounded-full w-12 h-12 animate-fade-in-up"
+						src="./src/images/linkedin.png"
+						alt="logo_linkedin"
+					  />
+					</a>
+					
+					<a class="hover:scale-110 transition duration-300" href="https://github.com/IsmaelSailema20" target="_blank">
+					  <img
+						class="rounded-full w-12 h-12 animate-fade-in-up"
+						src="./src/images/github.png"
+						alt="logo_github"
+					  />
+					</a>
+				  </div>
+			</div>
+			<img class="rounded-full animate-fade-in" src="./src/images/logo.png" alt="imagen-logo-principal">
+		</section>
 	</main>
 </Layout>
 
+<style>
+	@keyframes fade-in {
+	  from {
+		opacity: 0;
+		transform: translateY(30px);
+	  }
+	  to {
+		opacity: 1;
+		transform: translateY(0);
+	  }
+	}
+	
+	@keyframes fade-in-down {
+	  from {
+		opacity: 0;
+		transform: translateY(-30px);
+	  }
+	  to {
+		opacity: 1;
+		transform: translateY(0);
+	  }
+	}
+	
+	@keyframes fade-in-up {
+	  from {
+		opacity: 0;
+		transform: translateY(30px);
+	  }
+	  to {
+		opacity: 1;
+		transform: translateY(0);
+	  }
+	}
+	
+	.animate-fade-in {
+	  animation: fade-in 1.2s ease-out forwards;
+	}
+	
+	.animate-fade-in-down {
+	  animation: fade-in-down 1.2s ease-out forwards;
+	}
+	
+	.animate-fade-in-up {
+	  animation: fade-in-up 1.2s ease-out forwards;
+	}
