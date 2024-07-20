@@ -1,0 +1,146 @@
+---
+import Collaborative from "./icons/Collaborative.astro";
+import Individual from "./icons/Individual.astro";
+import Java from "./icons/Java.astro";
+import MySql from "./icons/MySql.astro";
+import NestJs from "./icons/NestJs.astro";
+import PostgreSQL from "./icons/PostgreSQL.astro";
+import Button from "./Button.astro";
+import Php from "./icons/Php.astro";
+import Html from "./icons/Html.astro";
+import Javascript from "./icons/Javascript.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+
+const TAGS = {
+  COLLABORATIVE: {
+    name: "Colaborativo",
+    class: "bg-blue-700 text-white",
+    icon: Collaborative,
+  },
+  INDIVIDUAL: {
+    name: "Individual",
+    class: "bg-green-800 text-white",
+    icon: Individual,
+  },
+  NESTJS: {
+    name: "NestJS",
+    class: "bg-red-950 text-white",
+    icon: NestJs,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-blue-900 text-white",
+    icon: PostgreSQL,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-gray-500 text-white",
+    icon: MySql,
+  },
+  JAVA: {
+    name: "Java",
+    class: "bg-gray-700 text-white",
+    icon: Java,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-indigo-600 text-white",
+    icon: Php,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-orange-500 text-white",
+    icon: Html,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "bg-yellow-500 text-black",
+    icon: Javascript,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-purple-400 text-white",
+    icon: Bootstrap,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "Sistema de Facturación",
+    description:
+      "Proyecto desarrollado a inicios de mi carrera, tiene un enfoque general con lo que respecta a un sistema de facturación, incluye una interfaz interactiva para que los ususarios puedan manejar este sistema de la manera más comoda, además este proyecto destaca por trabajar utilizando el patron MVC",
+    github: "#",
+    image: "./src/public/projects/sistema_facturacion.webp",
+    tags: [TAGS.JAVA, TAGS.MYSQL, TAGS.INDIVIDUAL],
+  },
+  {
+    title: "Control Asistencia Docente",
+    description:
+      "Este proyecto es una aplicación web diseñada específicamente para gestionar y controlar el registro de asistencia de empleados, con un enfoque particular en los docentes. La aplicación permite realizar un seguimiento detallado de la asistencia diaria, asegurando una gestión eficiente y precisa del personal. ",
+    github: "https://github.com/melanieAlban/control-asistencia-docente",
+    image: "./src/public/projects/asistencia_empleados.webp",
+    tags: [
+      TAGS.PHP,
+      TAGS.JS,
+      TAGS.MYSQL,
+      TAGS.HTML,
+      TAGS.BOOTSTRAP,
+      TAGS.COLLABORATIVE,
+    ],
+  },
+  {
+    title: "API-Ecommerce",
+    description:
+      "API desarrollada para un sistema básico de Ecommerce, desarrollado como un proyecto universitario, principalmente enfocado en el uso de una base de datos relacional como lo es PostgreSQL",
+    github: "https://github.com/IsmaelSailema20/API_project_ecommerce",
+    image: "./src/public/projects/ecommerce.webp",
+    tags: [TAGS.NESTJS, TAGS.POSTGRESQL, TAGS.COLLABORATIVE],
+  },
+  {
+    title: "Jungletras",
+    description:
+      "Este proyecto es un juego de sopa de letras desarrollado en Java, que integra una variedad de componentes de interfaz gráfica para ofrecer una experiencia de usuario interactiva y atractiva. El juego permite a los usuarios buscar y seleccionar palabras en una cuadrícula de letras, ofreciendo una interfaz visual intuitiva y fácil de usar.",
+    github: "https://github.com/W1llAn/ProyectoEstructuraFinal",
+    image: "./src/public/projects/jungletras.webp",
+    tags: [TAGS.JAVA, TAGS.COLLABORATIVE],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ title, description, github, image, tags }) => (
+    <div class="flex flex-col gap-y-16">
+      <article class="pl-32 m-5 flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full max-w-[580px] md:w-1/2 ">
+          <div class=" relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              src={image}
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              alt={`Imagen del proyecto de ${title}`}
+              loading="lazy"
+            />
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-3xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <ul class="flex gap-x-4 flex-wrap my-4">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`my-2 flex gap-x-2 rounded-full text-xs font-semibold ${tag.class} py-2 px-2 items-center`}
+                >
+                  <tag.icon class="size-4" />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+          <Button href={github} />
+        </div>
+      </article>
+    </div>
+  ))
+}

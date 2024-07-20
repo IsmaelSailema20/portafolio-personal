@@ -1,83 +1,110 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import CodeIcon from "../components/icons/CodeIcon.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout title="Portafolio Personal">
-	<main>
-		<section class="flex justify-between w-full items-center px-10 py-12">
-			<div class="pl-8">
-				<h1 class="text-6xl font-extrabold py-3 animate-fade-in-down">Hola, soy Ismael Sailema </h1>
-				<h2 class="text-3xl font-light py-3 animate-fade-in-up">Estudiante en la carrera de Ingeniería De Software. Me gusta trabajar en proyectos fullstack para distintos dispositivos.</h2>
-				<div class="flex w-full justify-center py-5 gap-11">
-					<a
-					class="hover:scale-110 transition duration-300"
-					  href="https://www.linkedin.com/in/ismael-sailema-a04089287"
-					  target="_blank"
-					>
-					  <img
-						class="rounded-full w-12 h-12 animate-fade-in-up"
-						src="./src/images/linkedin.png"
-						alt="logo_linkedin"
-					  />
-					</a>
-					
-					<a class="hover:scale-110 transition duration-300" href="https://github.com/IsmaelSailema20" target="_blank">
-					  <img
-						class="rounded-full w-12 h-12 animate-fade-in-up"
-						src="./src/images/github.png"
-						alt="logo_github"
-					  />
-					</a>
-				  </div>
-			</div>
-			<img class="rounded-full animate-fade-in" src="./src/images/logo.png" alt="imagen-logo-principal">
-		</section>
-	</main>
+  <main>
+    <SectionContainer
+      class="flex justify-between w-full items-center px-10 py-24"
+    >
+      <div class="pl-8 max-w-[800px]">
+        <h1 class="text-6xl font-extrabold py-3 animate-fade-in-down">
+          Hola, soy Ismael Sailema
+        </h1>
+        <h2 class="text-3xl font-light py-3 animate-fade-in-up">
+          Estudiante en la carrera de Ingeniería De Software. Me gusta trabajar
+          en proyectos fullstack para distintos dispositivos.
+        </h2>
+        <div class="flex w-full justify-center py-5 gap-11">
+          <a
+            class="hover:scale-110 transition duration-300"
+            href="https://www.linkedin.com/in/ismael-sailema-a04089287"
+            target="_blank"
+          >
+            <img
+              class="rounded-full size-12 animate-fade-in-up"
+              src="./src/public/icons_images/linkedin.png"
+              alt="logo_linkedin"
+            />
+          </a>
+
+          <a
+            class="hover:scale-110 transition duration-300"
+            href="https://github.com/IsmaelSailema20"
+            target="_blank"
+          >
+            <img
+              class="rounded-full size-12 animate-fade-in-up"
+              src="./src/public/icons_images/github.png"
+              alt="logo_github"
+            />
+          </a>
+        </div>
+      </div>
+      <img
+        class="rounded-full animate-fade-in"
+        src="./src/public/icons_images/logo.png"
+        alt="imagen-logo-principal"
+      />
+    </SectionContainer>
+    <SectionContainer class="mt-16 pt-16 ml-[72px]" id="proyectos">
+      <h2
+        class="flex items-center mb-6 text-4xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <CodeIcon />
+        Proyectos Realizados
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
 </Layout>
 
 <style>
-	@keyframes fade-in {
-	  from {
-		opacity: 0;
-		transform: translateY(30px);
-	  }
-	  to {
-		opacity: 1;
-		transform: translateY(0);
-	  }
-	}
-	
-	@keyframes fade-in-down {
-	  from {
-		opacity: 0;
-		transform: translateY(-30px);
-	  }
-	  to {
-		opacity: 1;
-		transform: translateY(0);
-	  }
-	}
-	
-	@keyframes fade-in-up {
-	  from {
-		opacity: 0;
-		transform: translateY(30px);
-	  }
-	  to {
-		opacity: 1;
-		transform: translateY(0);
-	  }
-	}
-	
-	.animate-fade-in {
-	  animation: fade-in 1.2s ease-out forwards;
-	}
-	
-	.animate-fade-in-down {
-	  animation: fade-in-down 1.2s ease-out forwards;
-	}
-	
-	.animate-fade-in-up {
-	  animation: fade-in-up 1.2s ease-out forwards;
-	}
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-down {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1.2s ease-out forwards;
+  }
+
+  .animate-fade-in-down {
+    animation: fade-in-down 1.2s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1.2s ease-out forwards;
+  }
+</style>
