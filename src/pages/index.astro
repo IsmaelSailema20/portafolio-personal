@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import CodeIcon from "../components/icons/CodeIcon.astro";
+import { CodeIcon, Technologies } from "../components/icons/indexIcons";
 import Projects from "../components/Projects.astro";
+import Habilities from "../components/Habilities.astro";
 ---
 
 <Layout title="Portafolio Personal">
@@ -59,52 +60,61 @@ import Projects from "../components/Projects.astro";
       </h2>
       <Projects />
     </SectionContainer>
+    <SectionContainer class="mt-16 pt-16 mx-[72px]" id="habilidades">
+      <h2
+        class="flex items-center mb-6 text-4xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Technologies class="size-9" />
+        Habilidades
+      </h2>
+      <Habilities />
+    </SectionContainer>
   </main>
+
+  <style>
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fade-in-down {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 1.2s ease-out forwards;
+    }
+
+    .animate-fade-in-down {
+      animation: fade-in-down 1.2s ease-out forwards;
+    }
+
+    .animate-fade-in-up {
+      animation: fade-in-up 1.2s ease-out forwards;
+    }
+  </style>
 </Layout>
-
-<style>
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fade-in-down {
-    from {
-      opacity: 0;
-      transform: translateY(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in {
-    animation: fade-in 1.2s ease-out forwards;
-  }
-
-  .animate-fade-in-down {
-    animation: fade-in-down 1.2s ease-out forwards;
-  }
-
-  .animate-fade-in-up {
-    animation: fade-in-up 1.2s ease-out forwards;
-  }
-</style>
