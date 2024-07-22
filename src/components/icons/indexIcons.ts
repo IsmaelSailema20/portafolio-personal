@@ -15,7 +15,10 @@ import Php from "./Php.astro";
 import PostgreSQL from "./PostgreSQL.astro";
 import Tailwind from "./Tailwind.astro";
 import Technologies from "./Technologies.astro";
-
+import UserCode from "./UserCode.astro";
+import Facebook from "./Facebook.astro";
+import Instagram from "./Instagram.astro";
+import Email from "./Email.astro";
 export {
   AstroIcon,
   Bootstrap,
@@ -34,4 +37,8 @@ export {
   Individual,
   Habilities,
   Technologies,
+  UserCode,
+  Facebook,
+  Email,
+  Instagram,
 };
