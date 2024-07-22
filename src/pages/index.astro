@@ -1,9 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import { CodeIcon, Technologies } from "../components/icons/indexIcons";
+import {
+  CodeIcon,
+  Technologies,
+  UserCode,
+} from "../components/icons/indexIcons";
 import Projects from "../components/Projects.astro";
 import Habilities from "../components/Habilities.astro";
+import AboutMe from "../components/AboutMe.astro";
 ---
 
 <Layout title="Portafolio Personal">
@@ -51,7 +56,7 @@ import Habilities from "../components/Habilities.astro";
         alt="imagen-logo-principal"
       />
     </SectionContainer>
-    <SectionContainer class="mt-16 pt-16 ml-[72px]" id="proyectos">
+    <SectionContainer class="my-16 pt-16 ml-[72px]" id="proyectos">
       <h2
         class="flex items-center mb-6 text-4xl font-semibold gap-x-3 text-black/80 dark:text-white"
       >
@@ -60,7 +65,7 @@ import Habilities from "../components/Habilities.astro";
       </h2>
       <Projects />
     </SectionContainer>
-    <SectionContainer class="mt-16 pt-16 mx-[72px]" id="habilidades">
+    <SectionContainer class="my-16 pt-16 mx-[72px]" id="habilidades">
       <h2
         class="flex items-center mb-6 text-4xl font-semibold gap-x-3 text-black/80 dark:text-white"
       >
@@ -69,52 +74,61 @@ import Habilities from "../components/Habilities.astro";
       </h2>
       <Habilities />
     </SectionContainer>
+    <SectionContainer class="my-16 pt-16 mx-[72px]" id="sobre_mi">
+      <h2
+        class="flex items-center mb-6 text-4xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <UserCode class="size-8" />
+        Sobre mi
+      </h2>
+      <AboutMe />
+    </SectionContainer>
   </main>
-
-  <style>
-    @keyframes fade-in {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fade-in-down {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fade-in-up {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-fade-in {
-      animation: fade-in 1.2s ease-out forwards;
-    }
-
-    .animate-fade-in-down {
-      animation: fade-in-down 1.2s ease-out forwards;
-    }
-
-    .animate-fade-in-up {
-      animation: fade-in-up 1.2s ease-out forwards;
-    }
-  </style>
 </Layout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-down {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1.2s ease-out forwards;
+  }
+
+  .animate-fade-in-down {
+    animation: fade-in-down 1.2s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1.2s ease-out forwards;
+  }
+</style>
