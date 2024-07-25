@@ -14,9 +14,9 @@ import AboutMe from "../components/AboutMe.astro";
 <Layout title="Portafolio Personal">
   <main>
     <SectionContainer
-      class="flex flex-col md:flex-row justify-between w-full items-center px-4 md:px-10 py-20"
+      class="flex flex-col items-center justify-between w-full px-4 py-20 sm:px-10 sm:flex-row md:px-10"
     >
-      <div class="w-full pl-0 md:pl-8 max-w-[800px] text-center md:text-left">
+      <div class="w-full md:px-8 max-w-[800px] text-center md:text-left">
         <h1
           class="text-4xl md:text-6xl font-extrabold py-3 animate-fade-in-down"
         >
@@ -34,7 +34,7 @@ import AboutMe from "../components/AboutMe.astro";
           >
             <img
               class="rounded-full w-12 h-12 animate-fade-in-up"
-              src="./src/public/icons_images/linkedin.png"
+              src="/linkedin.png"
               alt="logo_linkedin"
             />
           </a>
@@ -45,7 +45,7 @@ import AboutMe from "../components/AboutMe.astro";
           >
             <img
               class="rounded-full w-12 h-12 animate-fade-in-up"
-              src="./src/public/icons_images/github.png"
+              src="/github.png"
               alt="logo_github"
             />
           </a>
@@ -53,7 +53,7 @@ import AboutMe from "../components/AboutMe.astro";
       </div>
       <img
         class="rounded-full animate-fade-in w-3/4 md:w-1/2 lg:w-1/3 overflow-x-hidden mt-8 md:mt-0"
-        src="./src/public/icons_images/logo.png"
+        src="/logo.png"
         alt="imagen-logo-principal"
       />
     </SectionContainer>
