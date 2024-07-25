@@ -1,0 +1,50 @@
+<button
+  id="themeToggleBtn"
+  onclick="asignarTema()"
+  class="text-lg font-bold text-black dark:text-white"
+>
+  <img id="imagen_tema" />
+</button>
+
+<script>
+  const btnCambiarTema = document.getElementById("themeToggleBtn");
+  const contendorImagen = document.getElementById(
+    "imagen_tema"
+  ) as HTMLImageElement;
+  const sunIcon = "/sun.svg";
+  const moonIcon = "/moon.svg";
+
+  const actualizarIcono = () => {
+    if (!document.documentElement.classList.contains("dark")) {
+      contendorImagen.src = sunIcon;
+      contendorImagen.alt = "Icono Modo Claro";
+    } else {
+      contendorImagen.src = moonIcon;
+      contendorImagen.alt = "Icono Modo Oscuro";
+    }
+  };
+
+  const asignarTema = () => {
+    document.documentElement.classList.toggle("dark");
+    localStorage.setItem(
+      "theme",
+      document.documentElement.classList.contains("dark") ? "dark" : "light"
+    );
+    actualizarIcono();
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    if (
+      localStorage.getItem("theme") === "dark" ||
+      (!localStorage.getItem("theme") &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    actualizarIcono(); // Llama a actualizarIcono() para ajustar el icono
+  });
+
+  btnCambiarTema?.addEventListener("click", asignarTema);
+</script>
