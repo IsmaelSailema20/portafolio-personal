@@ -6,5 +6,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://IsmaelSailema20.github.io',
-  base: 'portafolio-personal',
+  base: '/portafolio-personal',
 });
