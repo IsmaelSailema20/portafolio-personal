@@ -1,0 +1,64 @@
+---
+import {
+  AstroIcon,
+  Bootstrap,
+  Css,
+  Html,
+  Java,
+  Javascript,
+  MySql,
+  NestJs,
+  Php,
+  PostgreSQL,
+  Tailwind,
+} from "./icons/indexIcons";
+import TypeScript from "./icons/TypeScript.astro";
+
+const FRONTEND = [
+  { title: "Html", icon: Html },
+  { title: "Css", icon: Css },
+  { title: "JavaScript", icon: Javascript },
+  { title: "Astro", icon: AstroIcon },
+  { title: "Tailwind", icon: Tailwind },
+  { title: "Bootstrap", icon: Bootstrap },
+];
+
+const BACKEND = [
+  { title: "Java", icon: Java },
+  { title: "TypeScript", icon: TypeScript },
+  { title: "NestJS", icon: NestJs },
+  { title: "Php", icon: Php },
+  { title: "MySql", icon: MySql },
+  { title: "PostgreSQL", icon: PostgreSQL },
+];
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 px-4">
+  <div class="flex flex-col items-center">
+    <h1 class="font-bold text-3xl my-10">Backend</h1>
+    <ul class="flex flex-wrap gap-5 justify-center py-9">
+      {
+        BACKEND.map(({ title, icon: Icon }) => (
+          <li class="my-3 flex flex-col items-center text-center w-24 h-24 hover:scale-110 transition duration-300">
+            <Icon class="w-full h-full object-contain" />
+            <p class="mt-2">{title}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <div class="flex flex-col items-center">
+    <h1 class="font-bold text-3xl my-10">Frontend</h1>
+    <ul class="flex flex-wrap gap-5 justify-center py-9">
+      {
+        FRONTEND.map(({ title, icon: Icon }) => (
+          <li class="my-3 flex flex-col items-center text-center w-24 h-24 hover:scale-110 transition duration-300">
+            <Icon class="w-full h-full object-contain" />
+            <p class="mt-2">{title}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
