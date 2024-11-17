@@ -19,6 +19,10 @@ import UserCode from "./UserCode.astro";
 import Facebook from "./Facebook.astro";
 import Instagram from "./Instagram.astro";
 import Email from "./Email.astro";
+import Briefcase from "./Briefcase.astro";
+import GraduationCap from "./GraduationCap.astro";
+import Medal from "./Medal.astro";
+import Calendar from "./Calendar.astro";
 export {
   AstroIcon,
   Bootstrap,
@@ -41,4 +45,8 @@ export {
   Facebook,
   Email,
   Instagram,
+  Briefcase,
+  GraduationCap,
+  Medal,
+  Calendar,
 };

@@ -1,15 +1,15 @@
 ---
-import GitHub from "./icons/GitHub.astro";
-const props = { ...Astro.props };
+const { href, icon: Icon, text, id } = Astro.props;
 ---
 
 <a
-  href={`${props.href}`}
+  id={id}
+  href={href}
   target="_blank"
-  class="my-4 inline-flex items-center justify-center py-2 px-3 text-base font-medium rounded-lg text-gray-400 bg-gray-800 hover:bg-gray-700 hover:text-white transition duration-300 ease-in-out"
+  class="hover:cursor-pointer my-4 inline-flex items-center justify-center py-2 px-3 text-base font-medium rounded-lg text-gray-400 bg-gray-800 hover:bg-gray-700 hover:text-white transition duration-300 ease-in-out"
 >
   <span class="w-full flex gap-x-3 items-center">
-    <GitHub />
-    <span>Code</span>
+    {Icon && <Icon />}
+    <span>{text}</span>
   </span>
 </a>

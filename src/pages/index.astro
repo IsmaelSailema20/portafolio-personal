@@ -5,10 +5,15 @@ import {
   CodeIcon,
   Technologies,
   UserCode,
+  Briefcase,
+  GraduationCap,
+  Medal,
 } from "../components/icons/indexIcons";
 import Projects from "../components/Projects.astro";
 import Habilities from "../components/Habilities.astro";
 import AboutMe from "../components/AboutMe.astro";
+import Formacion from "../components/Formacion.astro";
+import Button from "../components/Button.astro";
 ---
 
 <Layout title="Portafolio Personal">
@@ -56,6 +61,19 @@ import AboutMe from "../components/AboutMe.astro";
         src="/portafolio-personal/logo.png"
         alt="imagen-logo-principal"
       />
+    </SectionContainer>
+    <SectionContainer class="my-16 mx-[72px]" id="formacion">
+      <h2
+        class="flex items-center mb-6 text-4xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Briefcase />
+        Educación y Formación
+      </h2>
+      <div class="flex items-center justify-center gap-8">
+        <Button icon={GraduationCap} text="Educación" id="btn-educacion" />
+        <Button icon={Medal} text="Cursos" id="btn-cursos" />
+      </div>
+      <Formacion />
     </SectionContainer>
     <SectionContainer class="my-16 mx-[72px]" id="proyectos">
       <h2

@@ -1,0 +1,147 @@
+---
+import {Calendar} from "./icons/indexIcons";
+
+
+const educacionData = [
+{
+    title: "Bachillerato de Técnico en Informática",
+    description: "Unidad Educativa Mario Cobo Barona.",
+    year: "2018 - 2021",
+    side: "right",
+  },
+  {
+    title: "Ingeniería en Software - Estudiante",
+    description: "Universidad Técnica de Ambato.",
+    year: "2023 - Actualidad",
+    side: "left",
+  },
+];
+const cursosData = [
+  
+  {
+    title: "Programación con python aplicada a la Ingeniería",
+    description: "Universidad Técnica de Ambato - CTT FISEI",	
+    year: "2023",
+    side: "right",
+  },
+  {
+    title: "Curso de introducción a REACT JS",
+    description: "Curso Online en Platzi",
+    year: "2024",
+    side: "left",
+  },
+];
+
+---
+
+<div class="container mx-auto w-2/3 h-full" id="educacion-section">
+  <div class="relative wrap overflow-hidden p-10 h-full">
+  {
+    educacionData.map(({title,description,year,side}) => (
+    <div
+    class="border-2-2 absolute border-opacity-20 border-white-700 h-full border"
+    style="left: 50%"
+  >
+  </div>
+  <div class={`mb-8 flex justify-between items-center w-full ${side==='right'?'right-timeline':'flex-row-reverse left-timeline'}`}>
+    <div class="order-1 w-5/12"></div>
+    <div
+      class="z-20 flex items-center order-1 bg-gray-700 dark:bg-white shadow-xl w-4 h-4 rounded-full"
+    >
+    </div>
+    <div class="order-1 rounded-lg shadow-xl w-5/12 px-6 py-4 hover:scale-110 transition duration-300">
+      <h3 class="mb-3 font-semibold text-black dark:text-white text-xl">
+        {title}
+      </h3>
+      <p
+        class="text-sm leading-snug tracking-wide text-black dark:text-white text-opacity-100"
+      >
+       {description}
+      </p>
+      <span class="my-3 flex items-center gap-2">
+        <Calendar class='size-5' />{year}
+      </span>
+    </div>
+  </div>
+    ))
+  }
+  </div>
+</div>
+
+
+<div class="container mx-auto w-2/3 h-full" id="cursos-section">
+    <div class="relative wrap overflow-hidden p-10 h-full">
+    {
+      cursosData.map(({title,description,year,side}) => (
+      <div
+      class="border-2-2 absolute border-opacity-20 border-white-700 h-full border"
+      style="left: 50%"
+    >
+    </div>
+    <div class={`mb-8 flex justify-between items-center w-full ${side==='right'?'right-timeline':'flex-row-reverse left-timeline'}`}>
+      <div class="order-1 w-5/12"></div>
+      <div
+        class="z-20 flex items-center order-1 bg-gray-700 dark:bg-white shadow-xl w-4 h-4 rounded-full "
+      >
+      </div>
+      <div class="order-1 rounded-lg shadow-xl w-5/12 px-6 py-4 hover:scale-110 transition duration-300">
+        <h3 class="mb-3 font-semibold text-black dark:text-white text-xl">
+          {title}
+        </h3>
+        <p
+          class="text-sm leading-snug tracking-wide text-black dark:text-white text-opacity-100"
+        >
+         {description}
+        </p>
+        <span class="my-3 flex items-center gap-2">
+        <Calendar class='size-5' />{year}
+      </span>
+      </div>
+    </div>
+      ))
+    }
+    </div>
+  </div>
+
+
+<script>
+  // JavaScript para manejar la visibilidad de las secciones
+  document.addEventListener("DOMContentLoaded", function () {
+    const btnCursos = document.getElementById("btn-cursos");
+    const btnEducacion = document.getElementById("btn-educacion");
+    mostrarEducacion();
+    // Evento para botón "Formación"
+    btnCursos !== null
+      ? btnCursos.addEventListener("click", function () {
+          mostrarCursos();
+        })
+      : "";
+
+    // Evento para botón "Educación"
+    btnEducacion !== null
+      ? btnEducacion.addEventListener("click", function () {
+          mostrarEducacion();
+        })
+      : "";
+  });
+  const mostrarCursos = () => {
+    const CursosSection = document.getElementById("cursos-section");
+    const educacionSection = document.getElementById("educacion-section");
+    CursosSection !== null
+      ? CursosSection.classList.remove("hidden")
+      : "";
+    CursosSection !== null ? CursosSection.classList.add("block") : "";
+    educacionSection !== null ? educacionSection.classList.remove("block") : "";
+    educacionSection !== null ? educacionSection.classList.add("hidden") : "";
+  };
+  const mostrarEducacion = () => {
+    const CursosSection = document.getElementById("cursos-section");
+    const educacionSection = document.getElementById("educacion-section");
+    educacionSection !== null
+      ? educacionSection.classList.remove("hidden")
+      : "";
+    educacionSection !== null ? educacionSection.classList.add("block") : "";
+    CursosSection !== null ? CursosSection.classList.remove("block") : "";
+    CursosSection !== null ? CursosSection.classList.add("hidden") : "";
+  };
+</script>

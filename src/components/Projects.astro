@@ -10,6 +10,7 @@ import {
   Html,
   Javascript,
   Bootstrap,
+  GitHub,
 } from "./icons/indexIcons";
 import Button from "./Button.astro";
 
@@ -140,7 +141,7 @@ const PROJECTS = [
             ))}
           </ul>
           <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-          <Button href={github} />
+          <Button href={github} icon={GitHub} text="Code" />
         </div>
       </article>
     </div>
