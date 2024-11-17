@@ -22,11 +22,15 @@ import Button from "../components/Button.astro";
       class="flex flex-col items-center justify-between w-full px-4 py-20 sm:px-10 sm:flex-row md:px-10"
     >
       <div class="w-full md:px-8 max-w-[800px] text-center md:text-left">
-        <h1
-          class="text-4xl md:text-6xl font-extrabold py-3 animate-fade-in-down"
-        >
-          Hola, soy Ismael Sailema
-        </h1>
+        <div class="typewriter-container">
+          <h3
+            id="typewriter-text"
+            class="md:text-5xl font-extrabold py-3 animate-fade-in-down"
+          >
+          </h3>
+          <span id="cursor" class="typewriter-cursor">|</span>
+        </div>
+
         <h2 class="text-2xl md:text-3xl font-light py-3 animate-fade-in-up">
           Estudiante en la carrera de Ingeniería De Software. Me gusta trabajar
           en proyectos fullstack para distintos dispositivos.
@@ -57,8 +61,8 @@ import Button from "../components/Button.astro";
         </div>
       </div>
       <img
-        class="rounded-full animate-fade-in w-3/4 md:w-1/2 lg:w-1/3 overflow-x-hidden mt-8 md:mt-0"
-        src="/portafolio-personal/logo.png"
+        class="rounded-full h-72 md:h-96 lg:h-96 animate-fade-in w-72 md:w-96 lg:w-96 overflow-x-hidden mt-8 md:mt-0"
+        src="/portafolio-personal/IsmaelSailemaPerfil.jpeg"
         alt="imagen-logo-principal"
       />
     </SectionContainer>
@@ -150,4 +154,75 @@ import Button from "../components/Button.astro";
   .animate-fade-in-up {
     animation: fade-in-up 1.2s ease-out forwards;
   }
+
+  .typewriter-container {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  #cursor {
+    font-weight: bold;
+    font-size: 2.5rem;
+    animation: blink 0.7s steps(2, start) infinite;
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const textToWrite = [
+      "Hola, soy Ismael Sailema",
+      "Bienvenido a mi portafolio.",
+    ];
+
+    let textIndex = 0;
+    let charIndex = 0;
+
+    const typewriterTextElement = document.getElementById("typewriter-text");
+
+    // Función para la animación de escritura
+    function typeWriter() {
+      if (textIndex < textToWrite.length) {
+        if (charIndex < textToWrite[textIndex].length) {
+          // Agregar el siguiente carácter
+          typewriterTextElement !== null
+            ? (typewriterTextElement.innerHTML +=
+                textToWrite[textIndex].charAt(charIndex))
+            : "";
+          charIndex++;
+          setTimeout(typeWriter, 100); // Ajusta el tiempo entre caracteres aquí
+        } else {
+          // Termina de escribir una línea, pasar a la siguiente
+          setTimeout(() => {
+            charIndex = 0;
+            textIndex++;
+            typewriterTextElement !== null
+              ? (typewriterTextElement.innerHTML = "")
+              : ""; // Borrar el contenido para escribir la siguiente línea
+            typeWriter();
+          }, 2000); // Pausa entre líneas
+        }
+      } else {
+        // Repetir la animación desde el principio
+        textIndex = 0;
+        charIndex = 0;
+        setTimeout(typeWriter, 1000);
+      }
+    }
+
+    // Iniciar la animación de escritura
+    typeWriter();
+  });
+</script>
