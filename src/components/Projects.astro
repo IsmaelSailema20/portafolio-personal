@@ -10,6 +10,8 @@ import {
   Html,
   Javascript,
   Bootstrap,
+  GitHub,
+  Tailwind,
 } from "./icons/indexIcons";
 import Button from "./Button.astro";
 
@@ -64,6 +66,11 @@ const TAGS = {
     class: "bg-purple-400 text-white",
     icon: Bootstrap,
   },
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-blue-400 text-white",
+    icon: Tailwind,
+  },
 };
 
 const PROJECTS = [
@@ -106,6 +113,21 @@ const PROJECTS = [
     image: "/portafolio-personal/projects/jungletras.webp",
     tags: [TAGS.JAVA, TAGS.COLLABORATIVE],
   },
+  {
+    title: "Página web candidata",
+    description:
+      "Página web desarrollada para una de las candidatas al rectorado de la Universidad Técnica de Ambato, dentro de esta página web los usuarios pueden conocer las propuestas, novedades, eventos que tiene la candidata durante el tiempo de elecciones, además en el apartado de sugerencias y votaciones se da la opción a los usuarios de enviar sugerencias así como desmostrar su apoyo por una candidata en específico mediante un voto.",
+    github: "https://github.com/IsmaelSailema20/PaginaWebCandidata",
+    image: "/portafolio-personal/projects/paginawebcandidata.webp",
+    tags: [
+      TAGS.HTML,
+      TAGS.JS,
+      TAGS.PHP,
+      TAGS.MYSQL,
+      TAGS.COLLABORATIVE,
+      TAGS.TAILWIND,
+    ],
+  },
 ];
 ---
 
@@ -140,7 +162,7 @@ const PROJECTS = [
             ))}
           </ul>
           <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-          <Button href={github} />
+          <Button href={github} icon={GitHub} text="Code" />
         </div>
       </article>
     </div>
