@@ -14,6 +14,7 @@ import Habilities from "../components/Habilities.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Formacion from "../components/Formacion.astro";
 import Button from "../components/Button.astro";
+import ContactForm from "../components/ContactForm.astro";
 ---
 
 <Layout title="Portafolio Personal">
@@ -119,6 +120,19 @@ import Button from "../components/Button.astro";
         Sobre mí
       </h2>
       <AboutMe />
+    </SectionContainer>
+
+    <SectionContainer
+      class="py-[110px] my-[-110px] max-w-screen-xl mx-auto px-4"
+      id="contacto"
+    >
+      <h2
+        class="flex items-center mb-6 text-4xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <UserCode />
+        Contacto
+      </h2>
+      <ContactForm />
     </SectionContainer>
   </main>
 </Layout>
