@@ -18,27 +18,27 @@ import IconoMenuMovil from "./icons/IconoMenuMovil.astro";
 
     <nav class="hidden md:flex gap-x-10 items-center mr-10">
       <a
-        class="hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
+        class="nav-link hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
         href="#top">Inicio</a
       >
       <a
-        class="hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
+        class="nav-link hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
         href="#formacion">Formación</a
       >
       <a
-        class="hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
+        class="nav-link hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
         href="#proyectos">Proyectos</a
       >
       <a
-        class="hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
+        class="nav-link hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
         href="#habilidades">Habilidades</a
       >
       <a
-        class="hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
+        class="nav-link hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
         href="#sobre_mi">Sobre mí</a
       >
       <a
-        class="hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
+        class="nav-link hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
         href="#contacto">Contacto</a
       >
     </nav>
@@ -111,6 +111,19 @@ import IconoMenuMovil from "./icons/IconoMenuMovil.astro";
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+
+  .nav-link {
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+
+  .nav-link.active {
+    background-color: #0b72ba; /* Color de fondo cuando la sección está activa */
+    color: white; /* Texto en blanco para contraste */
+  }
 </style>
 <script>
   //MENU DESPLEGABLE PARA MOBIL
@@ -122,4 +135,34 @@ import IconoMenuMovil from "./icons/IconoMenuMovil.astro";
         mobileMenu?.classList.toggle("hidden");
       })
     : "";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Remueve "active" de todos los links
+            navLinks.forEach((link) => {
+              link.classList.remove("active");
+              link.classList.add("hover-underline-animation");
+            });
+
+            // Busca el enlace correspondiente a la sección activa
+            const activeLink = document.querySelector(
+              `.nav-link[href="#${entry.target.id}"]`
+            );
+            if (activeLink) {
+              activeLink?.classList.add("active");
+              activeLink.classList.remove("hover-underline-animation");
+            }
+          }
+        });
+      },
+      { rootMargin: "-50% 0px -50% 0px", threshold: 0 }
+    );
+    sections.forEach((section) => observer.observe(section));
+  });
 </script>
