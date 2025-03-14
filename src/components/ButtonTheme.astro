@@ -1,39 +1,42 @@
 <button
   id="themeToggleBtn"
-  onclick="asignarTema()"
   class="text-lg font-bold text-black dark:text-white"
 >
-  <img id="imagen_tema" />
+  <img id="imagen_tema" alt="Cambiar tema" />
 </button>
 
 <script>
-  const btnCambiarTema = document.getElementById("themeToggleBtn");
-  const contendorImagen = document.getElementById(
-    "imagen_tema"
-  ) as HTMLImageElement;
-  const sunIcon = "/portafolio-personal/sun.svg";
-  const moonIcon = "/portafolio-personal/moon.svg";
-
-  const actualizarIcono = () => {
-    if (!document.documentElement.classList.contains("dark")) {
-      contendorImagen.src = sunIcon;
-      contendorImagen.alt = "Icono Modo Claro";
-    } else {
-      contendorImagen.src = moonIcon;
-      contendorImagen.alt = "Icono Modo Oscuro";
-    }
-  };
-
-  const asignarTema = () => {
-    document.documentElement.classList.toggle("dark");
-    localStorage.setItem(
-      "theme",
-      document.documentElement.classList.contains("dark") ? "dark" : "light"
-    );
-    actualizarIcono();
-  };
-
   document.addEventListener("DOMContentLoaded", () => {
+    const btnCambiarTema = document.getElementById(
+      "themeToggleBtn"
+    ) as HTMLElement;
+    const contenedorImagen = document.getElementById(
+      "imagen_tema"
+    ) as HTMLImageElement;
+
+    const sunIcon = "/portafolio-personal/sun.svg";
+    const moonIcon = "/portafolio-personal/moon.svg";
+
+    const actualizarIcono = () => {
+      if (!document.documentElement.classList.contains("dark")) {
+        contenedorImagen.src = sunIcon;
+        contenedorImagen.alt = "Icono Modo Claro";
+      } else {
+        contenedorImagen.src = moonIcon;
+        contenedorImagen.alt = "Icono Modo Oscuro";
+      }
+    };
+
+    const asignarTema = () => {
+      document.documentElement.classList.toggle("dark");
+      localStorage.setItem(
+        "theme",
+        document.documentElement.classList.contains("dark") ? "dark" : "light"
+      );
+      actualizarIcono();
+    };
+
+    // Aplicar tema al cargar la página
     if (
       localStorage.getItem("theme") === "dark" ||
       (!localStorage.getItem("theme") &&
@@ -43,8 +46,10 @@
     } else {
       document.documentElement.classList.remove("dark");
     }
-    actualizarIcono(); // Llama a actualizarIcono() para ajustar el icono
-  });
 
-  btnCambiarTema?.addEventListener("click", asignarTema);
+    actualizarIcono(); // Asegurar que el icono se actualiza correctamente
+
+    // Agregar evento al botón (evita errores si el botón no existe)
+    btnCambiarTema?.addEventListener("click", asignarTema);
+  });
 </script>
