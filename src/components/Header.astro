@@ -4,20 +4,9 @@ import IconoMenuMovil from "./icons/IconoMenuMovil.astro";
 ---
 
 <header
-  class="flex font-semibold shadow-md py-2 px-4 sm:px-10 min-h-[70px] tracking-wide relative z-50 md:justify-between md:items-center md:w-full md:fixed md:top-0"
+  class="flex font-semibold py-2 px-4 sm:px-10 min-h-[70px] tracking-wide relative z-50 md:justify-between md:items-center md:w-full md:fixed md:top-0"
 >
   <div class="flex items-center justify-between gap-5 w-full">
-    <!-- Logo -->
-    <a href="#top">
-      <img
-        class="rounded-full w-16 h-16 md:w-24 md:h-20"
-        src="/portafolio-personal/logo.png"
-        alt="logo_dev"
-      />
-    </a>
-
-    <!-- Ícono de hamburguesa para pantallas pequeñas -->
-
     <!-- Botón de Menú y Tema para móviles -->
     <div class="md:hidden flex gap-10 items-center mr-5">
       <button id="menu-button" class="text-black dark:text-white">
@@ -53,37 +42,37 @@ import IconoMenuMovil from "./icons/IconoMenuMovil.astro";
         href="#contacto">Contacto</a
       >
     </nav>
+    <ButtonTheme />
   </div>
-  <ButtonTheme />
 
   <!-- Menú desplegable para pantallas pequeñas -->
   <div
     id="mobile-menu"
-    class="hidden absolute bg-white dark:bg-[#262d47] top-20 left-0 w-full shadow-md z-50"
+    class="hidden absolute bg-white dark:bg-white/95 top-20 left-0 w-full shadow-md z-50"
   >
     <nav class="flex flex-col items-center text-center gap-3 my-2">
       <a
-        class="text-xl hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
+        class="text-xl hover-underline-animation text-black block font-semibold text-[15px]"
         href="#top">Inicio</a
       >
       <a
-        class="text-xl hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
+        class="text-xl hover-underline-animation text-black block font-semibold text-[15px]"
         href="#formacion">Formación</a
       >
       <a
-        class="text-xl hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
+        class="text-xl hover-underline-animation text-black block font-semibold text-[15px]"
         href="#proyectos">Proyectos</a
       >
       <a
-        class="text-xl hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
+        class="text-xl hover-underline-animation text-black block font-semibold text-[15px]"
         href="#habilidades">Habilidades</a
       >
       <a
-        class="text-xl hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
+        class="text-xl hover-underline-animation text-black block font-semibold text-[15px]"
         href="#sobre_mi">Sobre mí</a
       >
       <a
-        class="text-xl hover-underline-animation text-black dark:text-white block font-semibold text-[15px]"
+        class="text-xl hover-underline-animation text-black block font-semibold text-[15px]"
         href="#contacto">Contacto</a
       >
     </nav>
