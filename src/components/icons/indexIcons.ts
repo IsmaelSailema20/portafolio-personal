@@ -23,6 +23,10 @@ import Briefcase from "./Briefcase.astro";
 import GraduationCap from "./GraduationCap.astro";
 import Medal from "./Medal.astro";
 import Calendar from "./Calendar.astro";
+import React from "./React.astro";
+import TypeScript from "./TypeScript.astro";
+import Location from "./Location.astro";
+import Message from "./Message.astro";
 export {
   AstroIcon,
   Bootstrap,
@@ -49,4 +53,8 @@ export {
   GraduationCap,
   Medal,
   Calendar,
+  React,
+  TypeScript,
+  Location,
+  Message,
 };
