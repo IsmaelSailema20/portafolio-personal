@@ -25,6 +25,8 @@ import Medal from "./Medal.astro";
 import Calendar from "./Calendar.astro";
 import React from "./React.astro";
 import TypeScript from "./TypeScript.astro";
+import Location from "./Location.astro";
+import Message from "./Message.astro";
 export {
   AstroIcon,
   Bootstrap,
@@ -53,4 +55,6 @@ export {
   Calendar,
   React,
   TypeScript,
+  Location,
+  Message,
 };

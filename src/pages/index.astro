@@ -16,55 +16,16 @@ import Formacion from "../components/Formacion.astro";
 import Button from "../components/Button.astro";
 import ContactForm from "../components/ContactForm.astro";
 import "../styles/global.css";
+import HeroSection from "../components/HeroSection.astro";
 ---
 
 <Layout title="Portafolio Personal">
-  <main class="py-5 md:py-20">
+  <main class="py-5 md:py-12">
     <SectionContainer
+      id="top"
       class="mb-16 md:my-32 flex flex-col items-center justify-between w-full max-w-screen-xl mx-auto px-4 md:py-10 sm:px-10 md:flex-row md:px-5"
     >
-      <div
-        class="w-full md:w-1/2 md:px-8 max-w-[800px] text-center md:text-left"
-      >
-        <h1 class="text-2xl md:text-5xl font-extrabold py-3 animate-fade-in-up">
-          ¡ Hola ! soy Ismael Sailema 👋
-        </h1>
-        <h2 class="text-2xl md:text-3xl font-light py-3 animate-fade-in-up">
-          Estudiante en la carrera de Ingeniería De Software. Me gusta trabajar
-          en proyectos fullstack para distintos dispositivos.
-        </h2>
-        <div class="flex w-full justify-center md:justify-start py-5 gap-11">
-          <a
-            class="hover:scale-110 transition duration-300"
-            href="https://www.linkedin.com/in/ismael-sailema-a04089287"
-            target="_blank"
-          >
-            <img
-              class="rounded-full w-12 h-12 animate-fade-in-up"
-              src="/portafolio-personal/linkedin.png"
-              alt="logo_linkedin"
-            />
-          </a>
-          <a
-            class="hover:scale-110 transition duration-300"
-            href="https://github.com/IsmaelSailema20"
-            target="_blank"
-          >
-            <img
-              class="rounded-full w-12 h-12 animate-fade-in-up"
-              src="/portafolio-personal/github.png"
-              alt="logo_github"
-            />
-          </a>
-        </div>
-      </div>
-      <div class="w-full md:w-1/2 flex justify-center md:justify-center">
-        <img
-          class="rounded-full h-64 w-64 md:h-80 md:w-80 lg:h-96 lg:w-96 animate-fade-in overflow-x-hidden mt-8 md:mt-0"
-          src="/portafolio-personal/IsmaelSailemaPerfil.jpeg"
-          alt="imagen-logo-principal"
-        />
-      </div>
+      <HeroSection />
     </SectionContainer>
 
     <SectionContainer
@@ -137,50 +98,3 @@ import "../styles/global.css";
     </SectionContainer>
   </main>
 </Layout>
-
-<style>
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fade-in-down {
-    from {
-      opacity: 0;
-      transform: translateY(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in {
-    animation: fade-in 1.2s ease-out forwards;
-  }
-
-  .animate-fade-in-down {
-    animation: fade-in-down 1.2s ease-out forwards;
-  }
-
-  .animate-fade-in-up {
-    animation: fade-in-up 1.2s ease-out forwards;
-  }
-</style>

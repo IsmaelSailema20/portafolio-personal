@@ -1,2 +1,17 @@
-@config "./tailwind.config.mjs";
 @import "tailwindcss";
+
+/* Definir la variante de modo oscuro */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Fondo degradado en modo oscuro */
+.dark {
+  background-image: linear-gradient(
+    to left bottom,
+    #1b1f36,
+    #192a61,
+    #0f348e,
+    #013cbc,
+    #1242eb
+  );
+  background-attachment: fixed;
+}
